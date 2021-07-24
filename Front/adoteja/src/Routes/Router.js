@@ -4,7 +4,7 @@ import HomePage from '../Pages/HomePage/HomePage'
 import HowToHelpPage from '../Pages/HowToHelpPage/HowToHelpPage'
 import EducationalPage from '../Pages/EducationalPage/EducationalPage'
 import DepoimentsPage from '../Pages/DepoimentsPage/DepoimentsPage'
-import AdminPage from "../Pages/AdminPage/styled"
+import AdminPage from "../Pages/AdminPage/AdminPage"
 import LoginPage from "../Pages/LoginPage/LoginPage"
 import ApplicationFormPage from "../Pages/ApplicationForm/ApplicationFormPage"
 
