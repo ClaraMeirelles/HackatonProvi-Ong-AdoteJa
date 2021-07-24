@@ -1,12 +1,12 @@
-# HackatonProvi-Ong-AdoteJa
+# ⚙️ HackatonProvi-Ong-AdoteJa
 
-⚙️ Desenvolvido por:
+# ⚙️ Desenvolvido por:
 
 Link
 
-⚙️ O que funciona:
-⚙️ O que não funciona
-⚙️ Tecnologias Usadas:
+# ⚙️ Problema:
+# ⚙️ Solução proposta:
+# ⚙️ Tecnologias Usadas:
 CSS3
 JavaScript
 React Js
