@@ -19,3 +19,6 @@ export const goToAdmin = (history) => {
 export const goToLogin = (history) => {
     history.push('/login')
 }
+export const goToApplication = (history) => {
+    history.push('/formulario-voluntarios')
+}
