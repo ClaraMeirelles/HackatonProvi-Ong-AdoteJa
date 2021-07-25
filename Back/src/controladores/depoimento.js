@@ -21,7 +21,7 @@ const cadastrarDepoimento = async (req, res) => {
     if (!nome) {
         return res.status(404).json('O campo nome é obrigatório');
     }
-    
+
     if (!cpf) {
         return res.status(404).json('O campo senha é obrigatório');
     }
@@ -49,9 +49,9 @@ const cadastrarDepoimento = async (req, res) => {
     if (!descricao) {
         return res.status(404).json('O campo email é obrigatório');
     }
-    
+
     try {
-        const depoimento = await knex('depoimentos').insert({ 
+        const depoimento = await knex('depoimentos').insert({
             nome,
             cpf,
             genero,
@@ -59,7 +59,7 @@ const cadastrarDepoimento = async (req, res) => {
             telefone,
             endereco,
             animal,
-            descricao 
+            descricao
         }).returning('*');
 
         if (!depoimento) {
@@ -78,13 +78,38 @@ const cadastrarDepoimento = async (req, res) => {
         }
 
         return res.status(200).json("Depoimento cadastrado com sucesso!");
-        
+
     } catch (error) {
         return res.status(400).json(error.message);
     }
+
+}
+
+const listarDepoimentos = async (req, res) => {
     
+    try {
+        const depoimentos = await knex('depoimentos')
+            .select('*');
+
+        if (depoimentos.length === 0) {
+            return res.status(200).json(depoimentos);
+        }
+
+        for (depoimento of depoimentos) {
+            //Atrelando a imagem a o depoimento
+            const fotos = await knex('depoimento_fotos')
+                .where({ depoimento_id: depoimento.id })
+                .select('imagem');
+            depoimento.fotos = fotos;
+        }
+
+        return res.status(200).json(depoimentos);
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
 }
 
 module.exports = {
-    cadastrarDepoimento
+    cadastrarDepoimento,
+    listarDepoimentos
 }

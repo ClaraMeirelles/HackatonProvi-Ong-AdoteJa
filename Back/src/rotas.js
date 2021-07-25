@@ -14,6 +14,7 @@ rotas.post('/login', login.login);
 
 //Cadastrar Depoimento
 rotas.post('/cadastrarDepoimento', depoimento.cadastrarDepoimento);
+rotas.get('/depoimentos', depoimento.listarDepoimentos);
 
 // filtro para verificar usuario logado
 rotas.use(verificaLogin);
