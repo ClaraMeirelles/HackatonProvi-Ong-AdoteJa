@@ -1,0 +1,6 @@
+export const primaryColor = '#E43367'
+export const secondaryColor = '#05C4F5'
+export const tercearyColor = '#F57B08'
+export const neutralGray = '#434343'
+export const black = '#FFFFFF'
+// export const white = '#F57B08'
