@@ -17,16 +17,23 @@ const login = async (req, res) => {
             return res.status(404).json('O gestor não foi encontrado');
         }
 
-        const buscarSenha = await knex('gestor').select('senha').where({ email }).first();
-        
-        const senhaCorreta = await bcrypt.compare(senha, buscarSenha.senha);
+        const senhaCorreta = await bcrypt.compare(senha, gestor.senha);
 
         if (!senhaCorreta) {
             return res.status(400).json("Email e senha não confere");
         }
 
-        //adicionar token 
+        const token = jwt.sign({
+            id: gestor.id,
+            email: gestor.email
+        }, senhaHash, { expiresIn: '8h' });
 
+        const { senha: _, ...dadosGestor } = gestor;
+
+        return res.status(200).json({
+            gestor: dadosGestor,
+            token
+        });
     } catch (error) {
         return res.status(400).json(error.message);
     }

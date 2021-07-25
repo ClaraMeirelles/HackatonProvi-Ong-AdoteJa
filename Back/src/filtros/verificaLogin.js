@@ -17,12 +17,12 @@ const verificaLogin = async (req, res, next) => {
         const gestorExiste = await knex('gestor').where({ id }).first();
 
         if (!gestorExiste) {
-            return res.status(404).json('Usuario não encontrado');
+            return res.status(404).json('Gestor não encontrado');
         }
 
-        const { senha, ...usuario } = usuarioExiste;
+        const { senha, ...gestor } = gestorExiste;
 
-        req.usuario = usuario;
+        req.gestor = gestor;
 
         next();
     } catch (error) {
@@ -30,4 +30,4 @@ const verificaLogin = async (req, res, next) => {
     }
 }
 
-module.exports = verificaLogin; 
+module.exports = verificaLogin;
