@@ -1,9 +1,9 @@
 import { useForm } from "../../Hooks/useForm";
-import { TextField } from '@material-ui/core'
+import { Button, TextField } from '@material-ui/core'
 import { useHistory } from "react-router";
 import { goToAdmin } from "../../Routes/coordinator";
 import { useEffect } from "react";
-import { LoginPageContainer } from "./styled";
+import { LoginButton, LoginPageContainer } from "./styled";
 import Header from "../../Components/Header/Header";
 
 export default function LoginPage() {
@@ -20,42 +20,45 @@ export default function LoginPage() {
 
     return (
         <>
-        <Header />
-        <LoginPageContainer>
-            LOGIN
-            <form>
-                <TextField
-                    name='name'
-                    value={form.name}
-                    onChange={handleInput}
-                    id="outlined-basic"
-                    label="Nome"
-                    variant="outlined"
-                    margin='normal'
-                    required
-                />
-                <TextField
-                    name='email'
-                    value={form.email}
-                    onChange={handleInput}
-                    id="outlined-basic"
-                    label="E-mail"
-                    variant="outlined"
-                    margin='normal'
-                    required
-                />
-                <TextField
-                    name='password'
-                    value={form.password}
-                    onChange={handleInput}
-                    id="outlined-basic"
-                    label="Senha"
-                    variant="outlined"
-                    margin='normal'
-                    required
-                />
-            </form>
-        </LoginPageContainer>
+            <Header />
+            <LoginPageContainer>
+                LOGIN
+                <form>
+                    <TextField
+                        name='name'
+                        value={form.name}
+                        onChange={handleInput}
+                        id="outlined-basic"
+                        label="Nome"
+                        variant="outlined"
+                        margin='normal'
+                        required
+                    />
+                    <TextField
+                        name='email'
+                        value={form.email}
+                        onChange={handleInput}
+                        id="outlined-basic"
+                        label="E-mail"
+                        variant="outlined"
+                        margin='normal'
+                        required
+                    />
+                    <TextField
+                        name='password'
+                        value={form.password}
+                        onChange={handleInput}
+                        id="outlined-basic"
+                        label="Senha"
+                        variant="outlined"
+                        margin='normal'
+                        required
+                    />
+                    <LoginButton variant="contained" color="primary" type="submit">
+                        Enviar
+                    </LoginButton>
+                </form>
+            </LoginPageContainer>
         </>
     )
 }

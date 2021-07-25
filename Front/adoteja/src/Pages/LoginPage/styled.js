@@ -12,3 +12,8 @@ export const LoginPageContainer = styled.main`
         width: 30vw;
     }
 `
+
+
+export const LoginButton = styled(Button)`
+    border-radius: 30px;
+`
