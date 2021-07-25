@@ -11,6 +11,7 @@ export default function ApplicationForm() {
         address: '',
         description: '',
         date: '',
+
     })
     const submitForm = (e) => {
         e.preventDefault()

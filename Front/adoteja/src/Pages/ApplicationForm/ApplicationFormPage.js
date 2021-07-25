@@ -1,5 +1,6 @@
 import { ApplicationFormContainer } from "./styled"
 import ApplicationForm from "./ApplicationForm"
+
 export default function ApplicationFormPage() {
 
     return (

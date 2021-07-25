@@ -10,6 +10,7 @@ export const ApplicationFormContainer = styled.section`
         display: flex;
         flex-direction: column;
         width: 50vw;
+        
         button{
             margin-top: 24px;
         }
