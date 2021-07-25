@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import styled from "styled-components";
 
 export const ApplicationFormContainer = styled.section`
@@ -14,5 +15,10 @@ export const ApplicationFormContainer = styled.section`
         button{
             margin-top: 24px;
         }
+        
     }
+`
+
+export const ApplicationButton = styled(Button)`
+    border-radius: 30px;
 `

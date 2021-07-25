@@ -1,5 +1,6 @@
 import { TextField, Select, InputLabel, FormControl, Button } from '@material-ui/core'
 import { useForm } from "../../Hooks/useForm"
+import { ApplicationButton } from './styled'
 
 export default function ApplicationForm() {
     const { form, handleInput, clearInputs } = useForm({
@@ -34,7 +35,7 @@ export default function ApplicationForm() {
                 value={form.cpf}
                 onChange={handleInput}
                 inputProps={{
-                    pattern:'{[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}}'
+                    pattern: '{[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}}'
                 }}
                 id="outlined-basic"
                 label="CPF"
@@ -101,9 +102,9 @@ export default function ApplicationForm() {
                 variant="outlined"
                 margin='normal'
             />
-            <Button variant="contained" color="primary" type="submit">
+            <ApplicationButton variant="contained" color="primary" type="submit">
                 Enviar
-            </Button>
+            </ApplicationButton>
         </form>
     )
 }
