@@ -6,7 +6,7 @@ import EducationalPage from '../Pages/EducationalPage/EducationalPage'
 import DepoimentsPage from '../Pages/DepoimentsPage/DepoimentsPage'
 import AdminPage from "../Pages/AdminPage/AdminPage"
 import LoginPage from "../Pages/LoginPage/LoginPage"
-import ApplicationFormPage from "../Pages/ApplicationForm/ApplicationFormPage"
+import ApplicationFormPage from "../Pages/ApplicationFormPage/ApplicationFormPage"
 
 export const Router = () => {
     return(
