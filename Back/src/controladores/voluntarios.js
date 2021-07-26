@@ -1,6 +1,7 @@
 const knex = require('../conexao');
 
 const cadastrarVoluntario = async (req, res) => {
+
     const { nome, cpf, genero, email, telefone, endereco, categoria, descricao } = req.body;
 
     if (!nome) {
@@ -75,11 +76,10 @@ const listarVoluntarios = async (req, res) => {
 }
 
 const apagarVoluntario = async (req, res) => {
-    const { voluntario } = req;
     const { id } = req.params;
 
     try {
-        const voluntarios = await knex('voluntarios').where({ id: voluntario.id, id: id });
+        const voluntarios = await knex('voluntarios').where({ id: id, id: id });
 
         if (!voluntarios[0]) {
             return res.status(404).json('Voluntário não encontrado');
