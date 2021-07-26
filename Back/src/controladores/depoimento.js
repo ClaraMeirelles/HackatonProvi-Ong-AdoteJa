@@ -109,7 +109,31 @@ const listarDepoimentos = async (req, res) => {
     }
 }
 
+const apagarDepoimento = async (req, res) => {
+    const { depoimento } = req;
+    const { id } = req.params;
+
+    try {
+        const depoimentos = await knex('depoimentos').where({ id: depoimento.id, id: id });
+
+        if (!depoimentos[0]) {
+            return res.status(404).json('Depoimento não encontrado');
+        }
+
+        const depoimentoExcluido = await knex('depoimentos').del().where('id', id);
+
+        if (depoimentoExcluido === 0) {
+            return res.status(400).json("O Depoimento não foi excluido");
+        }
+
+        return res.status(200).json('Depoimento excluido com sucesso');
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
+}
+
 module.exports = {
     cadastrarDepoimento,
-    listarDepoimentos
+    listarDepoimentos,
+    apagarDepoimento
 }
