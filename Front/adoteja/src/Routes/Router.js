@@ -7,9 +7,10 @@ import DepoimentsPage from '../Pages/DepoimentsPage/DepoimentsPage'
 import AdminPage from "../Pages/AdminPage/AdminPage"
 import LoginPage from "../Pages/LoginPage/LoginPage"
 import ApplicationFormPage from "../Pages/ApplicationForm/ApplicationFormPage"
+import Footer from "../Components/Footer/Footer"
 
 export const Router = () => {
-    return(
+    return (
         <BrowserRouter>
             <Switch>
                 <Route exact path={"/"}>
@@ -42,6 +43,7 @@ export const Router = () => {
                     </div>
                 </Route>
             </Switch>
+            <Footer />
         </BrowserRouter>
     )
 }
