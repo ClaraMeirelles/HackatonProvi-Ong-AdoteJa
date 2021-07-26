@@ -1,8 +1,10 @@
 const express = require('express');
 const login = require('./controladores/login');
 const gestor = require('./controladores/gestor');
-const depoimento = require('./controladores/depoimento')
+const depoimento = require('./controladores/depoimento');
+const voluntarios = require('./controladores/voluntarios')
 const verificaLogin = require('./filtros/verificaLogin');
+
 
 const rotas = express();
 
@@ -19,7 +21,10 @@ rotas.get('/depoimentos', depoimento.listarDepoimentos);
 // filtro para verificar usuario logado
 rotas.use(verificaLogin);
 
-//
-//rotas.post('/cadastrarDepoimento', depoimento.cadastrarDepoimento);
+//Cadastrar Voluntários
+rotas.post('/cadastrarVoluntario', voluntarios.cadastrarVoluntario);
+
+//Listar Voluntários
+rotas.get('/voluntários', voluntarios.listarVoluntarios);
 
 module.exports = rotas;

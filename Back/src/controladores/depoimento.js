@@ -86,13 +86,13 @@ const cadastrarDepoimento = async (req, res) => {
 }
 
 const listarDepoimentos = async (req, res) => {
-    
+
     try {
         const depoimentos = await knex('depoimentos')
             .select('*');
 
         if (depoimentos.length === 0) {
-            return res.status(200).json(depoimentos);
+            return res.status(404).json('Não existem depoimentos disponiveis no momento');
         }
 
         for (depoimento of depoimentos) {
