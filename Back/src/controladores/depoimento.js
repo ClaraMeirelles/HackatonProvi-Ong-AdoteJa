@@ -110,11 +110,10 @@ const listarDepoimentos = async (req, res) => {
 }
 
 const apagarDepoimento = async (req, res) => {
-    const { depoimento } = req;
     const { id } = req.params;
 
     try {
-        const depoimentos = await knex('depoimentos').where({ id: depoimento.id, id: id });
+        const depoimentos = await knex('depoimentos').where({ id: id, id: id });
 
         if (!depoimentos[0]) {
             return res.status(404).json('Depoimento não encontrado');

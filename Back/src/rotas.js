@@ -8,24 +8,27 @@ const verificaLogin = require('./filtros/verificaLogin');
 
 const rotas = express();
 
-// cadastro de gestor
-rotas.post('/cadastro', gestor.cadastrarGestor);
-
 // login
 rotas.post('/login', login.login);
 
 //Cadastrar Depoimento
 rotas.post('/cadastrarDepoimento', depoimento.cadastrarDepoimento);
+
+//Listar Depoimentos
 rotas.get('/depoimentos', depoimento.listarDepoimentos);
 
-//Apagar Depoimento
-rotas.delete('/depoimentos/:id', depoimento.apagarDepoimento);
+
+//Cadastrar Voluntários
+rotas.post('/cadastrarVoluntario', voluntarios.cadastrarVoluntario);
 
 // filtro para verificar usuario logado
 rotas.use(verificaLogin);
 
-//Cadastrar Voluntários
-rotas.post('/cadastrarVoluntario', voluntarios.cadastrarVoluntario);
+// cadastro de gestor
+rotas.post('/cadastro', gestor.cadastrarGestor);
+
+//Apagar Depoimento
+rotas.delete('/depoimentos/:id', depoimento.apagarDepoimento);
 
 //Listar Voluntários
 rotas.get('/voluntarios', voluntarios.listarVoluntarios);
