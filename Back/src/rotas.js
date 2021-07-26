@@ -18,6 +18,9 @@ rotas.post('/login', login.login);
 rotas.post('/cadastrarDepoimento', depoimento.cadastrarDepoimento);
 rotas.get('/depoimentos', depoimento.listarDepoimentos);
 
+//Apagar Depoimento
+rotas.delete('/depoimentos/:id', depoimento.apagarDepoimento);
+
 // filtro para verificar usuario logado
 rotas.use(verificaLogin);
 
@@ -28,6 +31,6 @@ rotas.post('/cadastrarVoluntario', voluntarios.cadastrarVoluntario);
 rotas.get('/voluntarios', voluntarios.listarVoluntarios);
 
 //Apagar Voluntários
-rotas.delete('voluntarios', voluntarios.apagarVoluntario);
+rotas.delete('/voluntarios/:id', voluntarios.apagarVoluntario);
 
 module.exports = rotas;
