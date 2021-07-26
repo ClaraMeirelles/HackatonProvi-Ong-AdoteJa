@@ -74,4 +74,27 @@ const listarVoluntarios = async (req, res) => {
     }
 }
 
-module.exports = { cadastrarVoluntario, listarVoluntarios }
+const apagarVoluntario = async (req, res) => {
+    const { voluntario } = req;
+    const { id } = req.params;
+
+    try {
+        const voluntarios = await knex('voluntarios').where({ id: voluntario.id, id: id });
+
+        if (!voluntarios[0]) {
+            return res.status(404).json('Voluntário não encontrado');
+        }
+
+        const voluntarioExcluido = await knex('voluntarios').del().where('id', id);
+
+        if (voluntarioExcluido === 0) {
+            return res.status(400).json("O Voluntário não foi excluido");
+        }
+
+        return res.status(200).json('Voluntário excluido com sucesso');
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
+}
+
+module.exports = { cadastrarVoluntario, listarVoluntarios, apagarVoluntario }
