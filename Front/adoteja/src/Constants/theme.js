@@ -9,7 +9,7 @@ export const theme = createTheme({
       main: primaryColor,
     },
     secondary: {
-      main: tercearyColor,
+      main: secondaryColor,
     },
     info: {
       main: tercearyColor,
@@ -17,11 +17,13 @@ export const theme = createTheme({
     white: {
       main: white,
     },
+
     text: {
       primary: white,
       secondary: white,
       terceary: white,
       white: tercearyColor,
+
     },
   },
 });

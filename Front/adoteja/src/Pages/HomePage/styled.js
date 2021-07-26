@@ -23,6 +23,15 @@
                 border-radius: 30px;
             }
         }
+        a{
+            text-decoration:none;
+            color: ${primaryColor};
+            font-weight:bold;
+            cursor: pointer;
+            :hover{
+                text-decoration: underline;
+            }
+        }
     `
 
     export const InfosContainer = styled.div`
@@ -38,7 +47,7 @@
             min-height: fit-content;
             border-radius: 30px;
             padding: 16px 32px;
-            max-width: 15vw;
+            width: 15vw;
             text-align:center;
             opacity: 50%;
             h1{
@@ -81,6 +90,7 @@
         width: 30vw;
         display: block;
         border-color: white;
+        color: white !important;
     `
 
     export const HowToHelp = styled.section`
