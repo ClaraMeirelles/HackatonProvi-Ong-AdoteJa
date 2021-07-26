@@ -31,6 +31,21 @@ export default function ApplicationForm() {
                 color='default'
                 required
             />
+             <FormControl variant="outlined" margin='normal'>
+                <InputLabel htmlFor="outlined-age-native-simple">Gênero</InputLabel>
+                <Select
+                    name='gender'
+                    native
+                    value={form.gender}
+                    onChange={handleInput}
+                    label="Gênero"
+                    required
+                >
+                    <option aria-label="None" value="" />
+                    <option value={'Feminino'}>Feminino</option>
+                    <option value={'Masculino'}>Masculino</option>
+                </Select>
+            </FormControl>
             <TextField
                 name='cpf'
                 value={form.cpf}
@@ -42,6 +57,7 @@ export default function ApplicationForm() {
                 label="CPF"
                 variant="outlined"
                 margin='normal'
+                required
             />
             <TextField
                 name='email'
@@ -52,6 +68,7 @@ export default function ApplicationForm() {
                 label="E-mail"
                 variant="outlined"
                 margin='normal'
+                required
             />
             <TextField
                 name='contact'
@@ -75,6 +92,7 @@ export default function ApplicationForm() {
                 label="Endereço"
                 variant="outlined"
                 margin='normal'
+                required
             />
             <FormControl variant="outlined" margin='normal'>
                 <InputLabel htmlFor="outlined-age-native-simple">Cargo</InputLabel>
@@ -102,6 +120,7 @@ export default function ApplicationForm() {
                 rows={4}
                 variant="outlined"
                 margin='normal'
+                required
             />
             <ApplicationButton variant="contained" color="primary" type="submit">
                 Enviar
