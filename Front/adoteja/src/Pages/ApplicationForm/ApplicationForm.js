@@ -1,6 +1,6 @@
 import { TextField, Select, InputLabel, FormControl, Button } from '@material-ui/core'
 import { useForm } from "../../Hooks/useForm"
-import { ApplicationButton } from './styled'
+import { ApplicationButton, InputText } from './styled'
 
 export default function ApplicationForm() {
     const { form, handleInput, clearInputs } = useForm({
@@ -20,7 +20,7 @@ export default function ApplicationForm() {
     }
     return (
         <form onSubmit={submitForm}>
-            <TextField
+            <InputText
                 name='name'
                 value={form.name}
                 onChange={handleInput}
@@ -28,6 +28,7 @@ export default function ApplicationForm() {
                 label="Nome"
                 variant="outlined"
                 margin='normal'
+                color='default'
                 required
             />
             <TextField

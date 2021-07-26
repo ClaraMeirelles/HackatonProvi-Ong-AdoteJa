@@ -2,7 +2,7 @@ import React from "react"
 import { useHistory } from "react-router-dom"
 import Header from "../../Components/Header/Header"
 import { DepoimentsSection, EducationalSection, HomeButton, HomeButtonDoar, HomePageContainer, HowToHelp, InfosContainer, PrimaryColorContainer, SecondaryColorContainer, TercearyColorContainer } from "./styled"
-
+import { goToHowToHelp } from '../../Routes/coordinator'
 export default function HomePage() {
     const history = useHistory()
     return (
@@ -11,19 +11,19 @@ export default function HomePage() {
             <HomePageContainer>
                 <HowToHelp>
                     <h1>Como doar?</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis massa ut convallis mollis.
-                        Fusce vehicula mauris eu condimentum rutrum. Nunc mollis purus eu arcu malesuada scelerisque.</p>
-                        <div>
-                            <p>QRCODE+INFOS</p>
-                            <p>QRCODE+INFOS</p>
-                        </div>
+                    <p>Caso não possa doar dinheiro mas queira contribuir com o nosso trabalho, considere <a onClick={() => goToHowToHelp(history)}>outros tipos de doações</a> ou <a onClick={() => goToHowToHelp(history)} >
+                        realizar trabalho voluntário</a> aqui na Adote Já.</p>
+                    <div>
+                        <p>QRCODE+INFOS</p>
+                        <p>QRCODE+INFOS</p>
+                    </div>
                 </HowToHelp>
                 <InfosContainer>
                     <SecondaryColorContainer>
                         <h1>
                             2500+
                         </h1>
-                        <p> atendimentos veterinários feitos pela clínica móvel </p>
+                        <p> atendimentos na clínica móvel </p>
                     </SecondaryColorContainer>
                     <TercearyColorContainer>
                         <h1>
@@ -35,13 +35,13 @@ export default function HomePage() {
                         <h1>
                             200+
                         </h1>
-                        <p>Castrações feitas pela clínica Móvel</p>
+                        <p>castrações feitas</p>
                     </PrimaryColorContainer>
                     <SecondaryColorContainer>
                         <h1>
                             15+
                         </h1>
-                        <p>Anos dedicados à proteção animal</p>
+                        <p>anos dedicados à proteção animal</p>
                     </SecondaryColorContainer>
                 </InfosContainer>
 
@@ -59,7 +59,7 @@ export default function HomePage() {
                 <EducationalSection>
                     <div>
                         <h1>Por que castrar?</h1>
-                        <p>Cães não castrados podem gerar cerca de 12 filhotes por ano, em 6 anos são 67 mil novos cães; Gatos 1 ano 20 filhotes, 6 anos 420 mil;<br />
+                        <p>Cães não castrados podem gerar cerca de 12 filhotes por ano e, em 6 anos são 67 mil novos cães sem cuidados garantidos; Gatos, em média, em 1 ano têm 20 filhotes, em 6 anos 420 mil;<br />
                             Além da superpopulação de animais abandonados, a castração reduz a chance de fugas, demarcações de território, câncer, aumenta a longevidade, além de prevenir diversas outras doenças.
                         </p>
                     </div>

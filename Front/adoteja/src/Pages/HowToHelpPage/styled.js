@@ -79,15 +79,10 @@ export const DepoimentsSection = styled.section`
     color: white;
 `
 
-export const HomeButtonDoar = styled(Button)`
+export const HowToHelpButton = styled(Button)`
     width: 30vw;
     display: block;
     border-color: white;
-    color: ${tercearyColor};
+    color: ${secondaryColor};
     background-color: white;
-`
-export const HomeButton = styled(Button)`
-    width: 30vw;
-    display: block;
-    border-color: white;
 `
