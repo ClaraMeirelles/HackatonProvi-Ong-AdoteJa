@@ -25,6 +25,9 @@ rotas.use(verificaLogin);
 rotas.post('/cadastrarVoluntario', voluntarios.cadastrarVoluntario);
 
 //Listar Voluntários
-rotas.get('/voluntários', voluntarios.listarVoluntarios);
+rotas.get('/voluntarios', voluntarios.listarVoluntarios);
+
+//Apagar Voluntários
+rotas.delete('voluntarios', voluntarios.apagarVoluntario);
 
 module.exports = rotas;
