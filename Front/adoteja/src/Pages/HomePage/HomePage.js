@@ -1,8 +1,7 @@
 import React from "react"
-import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { useHistory } from "react-router-dom"
 import Header from "../../Components/Header/Header"
-import { DepoimentsSection, EducationalSection, HomeButton, HomeButtonDoar, HomePageContainer, InfosContainer, PrimaryColorContainer, SecondaryColorContainer, TercearyColorContainer } from "./styled"
+import { DepoimentsSection, EducationalSection, HomeButton, HomeButtonDoar, HomePageContainer, HowToHelp, InfosContainer, PrimaryColorContainer, SecondaryColorContainer, TercearyColorContainer } from "./styled"
 
 export default function HomePage() {
     const history = useHistory()
@@ -10,11 +9,21 @@ export default function HomePage() {
         <>
             <Header />
             <HomePageContainer>
+                <HowToHelp>
+                    <h1>Como doar?</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis massa ut convallis mollis.
+                        Fusce vehicula mauris eu condimentum rutrum. Nunc mollis purus eu arcu malesuada scelerisque.</p>
+                        <div>
+                            <p>QRCODE+INFOS</p>
+                            <p>QRCODE+INFOS</p>
+                        </div>
+                </HowToHelp>
                 <InfosContainer>
                     <SecondaryColorContainer>
                         <h1>
-                            Numero de atendimentos
+                            2500+
                         </h1>
+                        <p> atendimentos veterinários feitos pela clínica móvel </p>
                     </SecondaryColorContainer>
                     <TercearyColorContainer>
                         <h1>
@@ -24,20 +33,26 @@ export default function HomePage() {
                     </TercearyColorContainer>
                     <PrimaryColorContainer>
                         <h1>
-                            Numero de castrações
+                            200+
                         </h1>
+                        <p>Castrações feitas pela clínica Móvel</p>
                     </PrimaryColorContainer>
                     <SecondaryColorContainer>
                         <h1>
-                            Numero de atendimentos
+                            15+
                         </h1>
+                        <p>Anos dedicados à proteção animal</p>
                     </SecondaryColorContainer>
                 </InfosContainer>
 
                 <DepoimentsSection>
-                    <img src={'https://image.freepik.com/fotos-gratis/uma-menina-esta-segurando-um-cachorro-vira-lata-nos-bracos-cuidando-de-animais_1153-5155.jpg'} alt="Amendoim e sua tutora"/>
+                    <img src={'https://image.freepik.com/fotos-gratis/uma-menina-esta-segurando-um-cachorro-vira-lata-nos-bracos-cuidando-de-animais_1153-5155.jpg'} alt="Amendoim e sua tutora" />
                     <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis massa ut convallis mollis. Fusce vehicula mauris eu condimentum rutrum. Nunc mollis purus eu arcu malesuada scelerisque. Fusce nec tristique magna. Duis lacinia felis sit amet porttitor vestibulum. Sed sit amet velit metus. Donec nec malesuada quam. Sed tellus lectus, dapibus eu urna et, rhoncus imperdiet eros. Proin vestibulum dui vel libero mattis, vitae facilisis est sagittis.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis massa ut convallis mollis.
+                            Fusce vehicula mauris eu condimentum rutrum. Nunc mollis purus eu arcu malesuada scelerisque.
+                            Fusce nec tristique magna. Duis lacinia felis sit amet porttitor vestibulum. Sed sit amet velit metus.
+                            Donec nec malesuada quam. Sed tellus lectus, dapibus eu urna et, rhoncus imperdiet eros.
+                            Proin vestibulum dui vel libero mattis, vitae facilisis est sagittis.</p>
                         <p><i>Ana Cláudia Santos, mamãe do Amendoim</i></p>
                     </div>
                 </DepoimentsSection>

@@ -1,5 +1,5 @@
     import styled from 'styled-components'
-    import {primaryColor, secondaryColor, tercearyColor} from '../../Constants/colors'
+    import {black, primaryColor, secondaryColor, tercearyColor} from '../../Constants/colors'
     import { Button } from "@material-ui/core"
 
     export const HomePageContainer = styled.main`
@@ -81,4 +81,23 @@
         width: 30vw;
         display: block;
         border-color: white;
+    `
+
+    export const HowToHelp = styled.section`
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
+        align-items: center;
+        text-align: center;
+        h1{
+            color: ${primaryColor};
+            font-size: 2em;
+        }
+        p{
+            color: ${black}
+        }
+        div{
+            display: flex;
+            justify-content: space-evenly;
+        }
     `
