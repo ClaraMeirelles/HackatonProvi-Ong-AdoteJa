@@ -111,3 +111,29 @@
             justify-content: space-evenly;
         }
     `
+
+    export const QrCodeDiv = styled.div`
+        display:flex;
+        flex-direction: column;
+        max-width: 40vw;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        >img{
+            margin:32px;
+        }
+        p{
+            img{
+                width: fit-content;
+                border-radius: 0;
+                height: 32px;
+            }
+        }
+    `
+
+    export const QrCodeContainer = styled.div`
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+           
+    `

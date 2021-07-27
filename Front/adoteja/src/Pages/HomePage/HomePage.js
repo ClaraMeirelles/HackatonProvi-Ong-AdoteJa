@@ -1,8 +1,11 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
 import Header from "../../Components/Header/Header"
-import { DepoimentsSection, EducationalSection, HomeButton, HomeButtonDoar, HomePageContainer, HowToHelp, InfosContainer, PrimaryColorContainer, SecondaryColorContainer, TercearyColorContainer } from "./styled"
+import { DepoimentsSection, EducationalSection, HomeButton, HomeButtonDoar, HomePageContainer, HowToHelp, InfosContainer, PrimaryColorContainer, QrCodeContainer, QrCodeDiv, SecondaryColorContainer, TercearyColorContainer } from "./styled"
 import { goToHowToHelp } from '../../Routes/coordinator'
+import qrCode from '../../Images/qrcode.jfif'
+import kickante from '../../Images/kickante.jfif'
+
 export default function HomePage() {
     const history = useHistory()
     return (
@@ -13,10 +16,15 @@ export default function HomePage() {
                     <h1>Como doar?</h1>
                     <p>Caso não possa doar dinheiro mas queira contribuir com o nosso trabalho, considere <a onClick={() => goToHowToHelp(history)}>outros tipos de doações</a> ou <a onClick={() => goToHowToHelp(history)} >
                         realizar trabalho voluntário</a> aqui na Adote Já.</p>
-                    <div>
-                        <p>QRCODE+INFOS</p>
-                        <p>QRCODE+INFOS</p>
-                    </div>
+                    <QrCodeContainer>
+                        <QrCodeDiv>
+                            <p>Doe pelo <img src={`${kickante}`} alt='logomarca kickante' /> </p>
+                            <img src={`${qrCode}`} alt='Código QR para efetuar doação para a ONG - desabilitado'/>
+                            <HomeButtonDoar variant="contained" color="white">
+                            Ver Campanha no Kickante
+                        </HomeButtonDoar>
+                        </QrCodeDiv>
+                    </QrCodeContainer>
                 </HowToHelp>
                 <InfosContainer>
                     <SecondaryColorContainer>
